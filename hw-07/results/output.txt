@@ -1,0 +1,79 @@
+Triggered 6 runs with delays: 10 10 35 10 35 10
+
+Run 20261019_201531_1_delay_10
+dag_id        logical_date    task_id                state    start_date                        end_date
+anton_medals                  create_table           success  2026-10-19T17:15:34.287551+00:00  2026-10-19T17:15:36.977323+00:00
+anton_medals                  pick_medal             success  2026-10-19T17:15:37.247316+00:00  2026-10-19T17:15:37.308649+00:00
+anton_medals                  pick_medal_task        success  2026-10-19T17:15:38.291209+00:00  2026-10-19T17:15:38.365647+00:00
+anton_medals                  calc_Bronze            skipped  2026-10-19T17:15:38.361740+00:00  2026-10-19T17:15:38.361740+00:00
+anton_medals                  calc_Silver            skipped  2026-10-19T17:15:38.361740+00:00  2026-10-19T17:15:38.361740+00:00
+anton_medals                  calc_Gold              success  2026-10-19T17:15:39.322946+00:00  2026-10-19T17:15:39.654469+00:00
+anton_medals                  generate_delay         success  2026-10-19T17:15:40.428235+00:00  2026-10-19T17:15:50.501438+00:00
+anton_medals                  check_for_correctness  success  2026-10-19T17:15:51.636655+00:00  2026-10-19T17:15:51.916325+00:00
+
+Run 20261019_201531_2_delay_10
+dag_id        logical_date    task_id                state    start_date                        end_date
+anton_medals                  create_table           success  2026-10-19T17:15:52.285091+00:00  2026-10-19T17:15:52.609754+00:00
+anton_medals                  pick_medal             success  2026-10-19T17:15:53.315222+00:00  2026-10-19T17:15:53.380740+00:00
+anton_medals                  pick_medal_task        success  2026-10-19T17:15:54.385584+00:00  2026-10-19T17:15:54.448340+00:00
+anton_medals                  calc_Bronze            skipped  2026-10-19T17:15:54.445746+00:00  2026-10-19T17:15:54.445746+00:00
+anton_medals                  calc_Silver            success  2026-10-19T17:15:55.464270+00:00  2026-10-19T17:15:55.795339+00:00
+anton_medals                  calc_Gold              skipped  2026-10-19T17:15:54.445746+00:00  2026-10-19T17:15:54.445746+00:00
+anton_medals                  generate_delay         success  2026-10-19T17:15:56.500982+00:00  2026-10-19T17:16:06.554847+00:00
+anton_medals                  check_for_correctness  success  2026-10-19T17:16:07.305198+00:00  2026-10-19T17:16:07.597226+00:00
+
+Run 20261019_201531_3_delay_35
+dag_id        logical_date    task_id                state    start_date                        end_date
+anton_medals                  create_table           success  2026-10-19T17:16:09.425501+00:00  2026-10-19T17:16:09.707891+00:00
+anton_medals                  pick_medal             success  2026-10-19T17:16:10.472434+00:00  2026-10-19T17:16:10.534324+00:00
+anton_medals                  pick_medal_task        success  2026-10-19T17:16:11.545110+00:00  2026-10-19T17:16:11.605312+00:00
+anton_medals                  calc_Bronze            skipped  2026-10-19T17:16:11.602843+00:00  2026-10-19T17:16:11.602843+00:00
+anton_medals                  calc_Silver            skipped  2026-10-19T17:16:11.602843+00:00  2026-10-19T17:16:11.602843+00:00
+anton_medals                  calc_Gold              success  2026-10-19T17:16:12.346580+00:00  2026-10-19T17:16:12.697828+00:00
+anton_medals                  generate_delay         success  2026-10-19T17:16:13.426779+00:00  2026-10-19T17:16:48.489549+00:00
+anton_medals                  check_for_correctness  failed   2026-10-19T17:16:48.681043+00:00  2026-10-19T17:17:19.148637+00:00
+
+Run 20261019_201531_4_delay_10
+dag_id        logical_date    task_id                state    start_date                        end_date
+anton_medals                  create_table           success  2026-10-19T17:17:20.810042+00:00  2026-10-19T17:17:21.111245+00:00
+anton_medals                  pick_medal             success  2026-10-19T17:17:21.874754+00:00  2026-10-19T17:17:21.938231+00:00
+anton_medals                  pick_medal_task        success  2026-10-19T17:17:22.260441+00:00  2026-10-19T17:17:22.326564+00:00
+anton_medals                  calc_Bronze            skipped  2026-10-19T17:17:22.323033+00:00  2026-10-19T17:17:22.323033+00:00
+anton_medals                  calc_Silver            success  2026-10-19T17:17:22.452478+00:00  2026-10-19T17:17:22.816406+00:00
+anton_medals                  calc_Gold              skipped  2026-10-19T17:17:22.323033+00:00  2026-10-19T17:17:22.323033+00:00
+anton_medals                  generate_delay         success  2026-10-19T17:17:23.593004+00:00  2026-10-19T17:17:33.648326+00:00
+anton_medals                  check_for_correctness  success  2026-10-19T17:17:34.643470+00:00  2026-10-19T17:17:34.937514+00:00
+
+Run 20261019_201531_5_delay_35
+dag_id        logical_date    task_id                state    start_date                        end_date
+anton_medals                  create_table           success  2026-10-19T17:17:36.737816+00:00  2026-10-19T17:17:37.028795+00:00
+anton_medals                  pick_medal             success  2026-10-19T17:17:37.497252+00:00  2026-10-19T17:17:37.555257+00:00
+anton_medals                  pick_medal_task        success  2026-10-19T17:17:38.568340+00:00  2026-10-19T17:17:38.632338+00:00
+anton_medals                  calc_Bronze            skipped  2026-10-19T17:17:38.629922+00:00  2026-10-19T17:17:38.629922+00:00
+anton_medals                  calc_Silver            success  2026-10-19T17:17:39.642144+00:00  2026-10-19T17:17:39.991247+00:00
+anton_medals                  calc_Gold              skipped  2026-10-19T17:17:38.629922+00:00  2026-10-19T17:17:38.629922+00:00
+anton_medals                  generate_delay         success  2026-10-19T17:17:40.672071+00:00  2026-10-19T17:18:15.733543+00:00
+anton_medals                  check_for_correctness  failed   2026-10-19T17:18:15.904182+00:00  2026-10-19T17:18:46.364304+00:00
+
+Run 20261019_201531_6_delay_10
+dag_id        logical_date    task_id                state    start_date                        end_date
+anton_medals                  create_table           success  2026-10-19T17:18:47.987210+00:00  2026-10-19T17:18:48.340652+00:00
+anton_medals                  pick_medal             success  2026-10-19T17:18:49.061199+00:00  2026-10-19T17:18:49.120108+00:00
+anton_medals                  pick_medal_task        success  2026-10-19T17:18:50.085765+00:00  2026-10-19T17:18:50.156849+00:00
+anton_medals                  calc_Bronze            success  2026-10-19T17:18:51.136773+00:00  2026-10-19T17:18:51.475030+00:00
+anton_medals                  calc_Silver            skipped  2026-10-19T17:18:50.153623+00:00  2026-10-19T17:18:50.153623+00:00
+anton_medals                  calc_Gold              skipped  2026-10-19T17:18:50.153623+00:00  2026-10-19T17:18:50.153623+00:00
+anton_medals                  generate_delay         success  2026-10-19T17:18:52.212436+00:00  2026-10-19T17:19:02.283420+00:00
+anton_medals                  check_for_correctness  success  2026-10-19T17:19:02.851863+00:00  2026-10-19T17:19:03.139579+00:00
+
+Last records in anton.hw_dag_results
++----+------------+-------+---------------------+
+| id | medal_type | count | created_at          |
++----+------------+-------+---------------------+
+|  6 | Bronze     | 14939 | 2026-10-19 17:18:51 |
+|  5 | Silver     | 14676 | 2026-10-19 17:17:39 |
+|  4 | Silver     | 14676 | 2026-10-19 17:17:22 |
+|  3 | Gold       | 15072 | 2026-10-19 17:16:12 |
+|  2 | Silver     | 14676 | 2026-10-19 17:15:55 |
+|  1 | Gold       | 15072 | 2026-10-19 17:15:39 |
++----+------------+-------+---------------------+

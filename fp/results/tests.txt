@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+collecting ... collected 19 items
+
+test_part_1.py::test_filter_bio_keeps_only_numeric_height_and_weight PASSED [  5%]
+test_part_1.py::test_results_go_to_kafka_as_json_with_athlete_id_key PASSED [ 10%]
+test_part_1.py::test_parse_results_gives_one_column_per_json_field PASSED [ 15%]
+test_part_1.py::test_enrich_joins_by_athlete_id PASSED                   [ 21%]
+test_part_1.py::test_average_stats_per_sport_medal_sex_and_country PASSED [ 26%]
+test_part_1.py::test_output_messages_carry_all_columns PASSED            [ 31%]
+test_part_2.py::test_download_saves_csv_to_landing PASSED                [ 36%]
+test_part_2.py::test_download_fails_on_http_error PASSED                 [ 42%]
+test_part_2.py::test_landing_to_bronze_writes_parquet PASSED             [ 47%]
+test_part_2.py::test_clean_text[  Ivanka   Bonova -Ivanka Bonova] PASSED [ 52%]
+test_part_2.py::test_clean_text[Personal Best: 400 \u2013 53.54 (1980).-Personal Best 400 53.54 (1980).] PASSED [ 57%]
+test_part_2.py::test_clean_text[J\xfcrgen O'Brien-M\xfcller-J\xfcrgen O'Brien-M\xfcller] PASSED [ 63%]
+test_part_2.py::test_clean_text[80-82-80-82] PASSED                      [ 68%]
+test_part_2.py::test_clean_text[a#b$c%d*e-abcde] PASSED                  [ 73%]
+test_part_2.py::test_clean_text[None-None] PASSED                        [ 78%]
+test_part_2.py::test_clean_table_cleans_only_text_columns_and_drops_duplicates PASSED [ 84%]
+test_part_2.py::test_bronze_to_silver_reads_bronze_and_writes_silver PASSED [ 89%]
+test_part_2.py::test_average_stats PASSED                                [ 94%]
+test_part_2.py::test_silver_to_gold_writes_avg_stats PASSED              [100%]
+
+============================= 19 passed in 10.74s ==============================
+============================= test session starts ==============================
+collecting ... collected 6 items
+
+test_dag.py::test_dag_is_in_project_solution PASSED                      [ 16%]
+test_dag.py::test_dag_runs_three_jobs_one_after_another PASSED           [ 33%]
+test_dag.py::test_each_task_submits_its_script[landing_to_bronze] PASSED [ 50%]
+test_dag.py::test_each_task_submits_its_script[bronze_to_silver] PASSED  [ 66%]
+test_dag.py::test_each_task_submits_its_script[silver_to_gold] PASSED    [ 83%]
+test_dag.py::test_runs_only_on_demand PASSED                             [100%]
+
+============================== 6 passed in 0.53s ===============================

@@ -1,0 +1,91 @@
+Part 1: streaming pipeline
+[topics] created anton_athlete_event_results, anton_athlete_enriched_agg
+[topics] on broker:
+anton_athlete_enriched_agg
+anton_athlete_event_results
+[mysql_to_kafka] sent 316834 rows from olympic_dataset.athlete_event_results to anton_athlete_event_results
+[pipeline] reading anton_athlete_event_results
+[pipeline] batch 0: 4517 rows to anton_athlete_enriched_agg and anton.athlete_enriched_agg
+[pipeline] batch 1: 8141 rows to anton_athlete_enriched_agg and anton.athlete_enriched_agg
+[pipeline] batch 2: 10580 rows to anton_athlete_enriched_agg and anton.athlete_enriched_agg
+[pipeline] batch 3: 10879 rows to anton_athlete_enriched_agg and anton.athlete_enriched_agg
+[reader] first 20 messages of anton_athlete_enriched_agg
+{"sport": "Swimming", "medal": "Silver", "sex": "Male", "country_noc": "GDR", "avg_height": 186.3181818181818, "avg_weight": 77.86363636363636, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Volleyball", "medal": "No medal", "sex": "Female", "country_noc": "CRO", "avg_height": 185.54545454545453, "avg_weight": 71.81818181818181, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Tennis", "medal": "No medal", "sex": "Male", "country_noc": "CYP", "avg_height": 183.0, "avg_weight": 80.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Canoe Sprint", "medal": "Gold", "sex": "Male", "country_noc": "FIN", "avg_height": 176.0, "avg_weight": 74.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Artistic Gymnastics", "medal": "Gold", "sex": "Male", "country_noc": "PRK", "avg_height": 159.0, "avg_weight": 55.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Boxing", "medal": "No medal", "sex": "Male", "country_noc": "BUL", "avg_height": 175.69736842105263, "avg_weight": 67.80263157894737, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Sailing", "medal": "No medal", "sex": "Male", "country_noc": "AUS", "avg_height": 181.3909090909091, "avg_weight": 82.65454545454546, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Athletics", "medal": "No medal", "sex": "Female", "country_noc": "BDI", "avg_height": 168.0, "avg_weight": 53.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Cycling Road", "medal": "No medal", "sex": "Male", "country_noc": "COD", "avg_height": 172.33333333333334, "avg_weight": 70.16666666666667, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Badminton", "medal": "No medal", "sex": "Female", "country_noc": "MRI", "avg_height": 158.0, "avg_weight": 48.6, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Judo", "medal": "No medal", "sex": "Male", "country_noc": "GUM", "avg_height": 177.25, "avg_weight": 84.75, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Rowing", "medal": "No medal", "sex": "Male", "country_noc": "KSA", "avg_height": 190.0, "avg_weight": 92.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Boxing", "medal": "No medal", "sex": "Male", "country_noc": "BIZ", "avg_height": 167.0, "avg_weight": 51.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Weightlifting", "medal": "Bronze", "sex": "Female", "country_noc": "INA", "avg_height": 149.66666666666666, "avg_weight": 50.666666666666664, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Boxing", "medal": "Silver", "sex": "Male", "country_noc": "BLR", "avg_height": 186.5, "avg_weight": 86.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Wrestling", "medal": "No medal", "sex": "Male", "country_noc": "IRQ", "avg_height": 168.71428571428572, "avg_weight": 74.14285714285714, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Wrestling", "medal": "No medal", "sex": "Male", "country_noc": "CHI", "avg_height": 191.0, "avg_weight": 120.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Sailing", "medal": "Gold", "sex": "Female", "country_noc": "BRA", "avg_height": 170.0, "avg_weight": 65.0, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Swimming", "medal": "No medal", "sex": "Male", "country_noc": "MHL", "avg_height": 183.0, "avg_weight": 89.33333333333333, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+{"sport": "Athletics", "medal": "No medal", "sex": "Female", "country_noc": "NCA", "avg_height": 158.0, "avg_weight": 50.857142857142854, "timestamp": "2026-10-19T20:31:35.855+03:00"}
+
+Last rows in anton.athlete_enriched_agg
++----------------------+----------+--------+-------------+--------------------+-------------------+---------------------+
+| sport                | medal    | sex    | country_noc | avg_height         | avg_weight        | timestamp           |
++----------------------+----------+--------+-------------+--------------------+-------------------+---------------------+
+| Basque pelota        | No medal | Male   | MEX         |                178 |                72 | 2026-10-19 20:31:42 |
+| Cycling Road         | No medal | Male   | OMA         |                184 |                69 | 2026-10-19 20:31:42 |
+| Ski Jumping          | Gold     | Male   | NOR         |              180.8 |              66.6 | 2026-10-19 20:31:42 |
+| Cross Country Skiing | No medal | Female | BUL         |  167.7674418604651 | 59.76744186046512 | 2026-10-19 20:31:42 |
+| Volleyball           | No medal | Female | CRO         | 185.54545454545453 | 71.81818181818181 | 2026-10-19 20:31:42 |
+| Tennis               | Silver   | Female | NED         |              173.5 |                64 | 2026-10-19 20:31:42 |
+| Tennis               | No medal | Male   | GER         |            186.125 |          78.71875 | 2026-10-19 20:31:42 |
+| Taekwondo            | Silver   | Male   | AUS         |                180 |                86 | 2026-10-19 20:31:42 |
+| Fencing              | No medal | Male   | YUG         |                179 |                81 | 2026-10-19 20:31:42 |
+| Canoe Marathon       | Silver   | Male   | GER         |                180 |                89 | 2026-10-19 20:31:42 |
+| Freestyle Skiing     | No medal | Male   | SLO         |              177.5 |                87 | 2026-10-19 20:31:42 |
+| Canoe Sprint         | Gold     | Female | SWE         |              170.6 |              65.2 | 2026-10-19 20:31:42 |
+| Fencing              | No medal | Male   | BOL         |                183 |                98 | 2026-10-19 20:31:42 |
+| Volleyball           | No medal | Male   | FRA         | 194.27083333333334 |              87.5 | 2026-10-19 20:31:42 |
+| Athletics            | No medal | Male   | ROU         | 181.30769230769232 | 74.31868131868131 | 2026-10-19 20:31:42 |
+| Weightlifting        | Silver   | Male   | TCH         |                170 |               104 | 2026-10-19 20:31:42 |
+| Basketball           | Bronze   | Female | RUS         | 187.66666666666666 |            73.375 | 2026-10-19 20:31:42 |
+| Sailing              | No medal | Male   | FIN         | 180.24242424242425 | 77.22727272727273 | 2026-10-19 20:31:42 |
+| Boxing               | Gold     | Male   | GDR         |              174.6 |              63.8 | 2026-10-19 20:31:42 |
+| Wrestling            | No medal | Female | ISR         |                169 |                69 | 2026-10-19 20:31:42 |
++----------------------+----------+--------+-------------+--------------------+-------------------+---------------------+
+
+Part 2: batch data lake
+Triggered manual_20261019_203147
+dag_id                  execution_date             task_id            state    start_date                        end_date
+anton_project_solution  2026-10-19T17:31:48+00:00  landing_to_bronze  success  2026-10-19T17:31:50.026760+00:00  2026-10-19T17:31:59.943531+00:00
+anton_project_solution  2026-10-19T17:31:48+00:00  bronze_to_silver   success  2026-10-19T17:32:01.481355+00:00  2026-10-19T17:32:11.698341+00:00
+anton_project_solution  2026-10-19T17:31:48+00:00  silver_to_gold     success  2026-10-19T17:32:13.157235+00:00  2026-10-19T17:32:19.930788+00:00
+
+gold/avg_stats in the silver_to_gold log
++-------------------+--------+------+-----------+------------------+------------------+--------------------+
+|              sport|   medal|   sex|country_noc|        avg_height|        avg_weight|           timestamp|
++-------------------+--------+------+-----------+------------------+------------------+--------------------+
+|          Athletics|No medal|  Male|        GBR| 181.4121151936445| 75.04766633565045|2026-10-19 17:32:...|
+|    Nordic Combined|No medal|  Male|        SUI|176.73134328358208|  65.5223880597015|2026-10-19 17:32:...|
+|        Ski Jumping|No medal|  Male|        POL| 173.6159420289855| 63.78260869565217|2026-10-19 17:32:...|
+| Equestrian Jumping|    Gold|  Male|        USA|182.11111111111111| 71.66666666666667|2026-10-19 17:32:...|
+|             Boxing|No medal|  Male|        GHA| 170.9787234042553|61.765957446808514|2026-10-19 17:32:...|
+|       Canoe Sprint|No medal|  Male|        FRG|186.15873015873015| 82.80952380952381|2026-10-19 17:32:...|
+|Artistic Gymnastics|No medal|  Male|        ISR|172.28571428571428| 67.57142857142857|2026-10-19 17:32:...|
+|         Basketball|No medal|  Male|        GRE|201.64864864864865| 99.48648648648648|2026-10-19 17:32:...|
+|Rhythmic Gymnastics|No medal|Female|        ITA|167.31428571428572| 49.08571428571429|2026-10-19 17:32:...|
+|           Biathlon|No medal|  Male|        FIN|179.00925925925927|             72.25|2026-10-19 17:32:...|
+|             Boxing|No medal|  Male|        RHO|             168.0|             60.25|2026-10-19 17:32:...|
+|             Boxing|  Bronze|  Male|        VEN|             165.0|              52.5|2026-10-19 17:32:...|
+|         Ice Hockey|  Bronze|  Male|        CZE|            185.28|             89.84|2026-10-19 17:32:...|
+|           Shooting|  Silver|  Male|        FRA|             179.6|              75.8|2026-10-19 17:32:...|
+|          Bobsleigh|No medal|  Male|        BIH|           183.875|            91.125|2026-10-19 17:32:...|
+|             Diving|No medal|Female|        CUB|154.33333333333334|              50.5|2026-10-19 17:32:...|
+|            Curling|  Silver|  Male|        NOR|             185.8|              87.6|2026-10-19 17:32:...|
+|           Handball|No medal|Female|        HUN|175.47457627118644| 68.08474576271186|2026-10-19 17:32:...|
+|             Rowing|No medal|  Male|        VEN|             192.0|              84.0|2026-10-19 17:32:...|
+|Artistic Gymnastics|No medal|  Male|        ARM| 163.2941176470588|58.470588235294116|2026-10-19 17:32:...|
++-------------------+--------+------+-----------+------------------+------------------+--------------------+

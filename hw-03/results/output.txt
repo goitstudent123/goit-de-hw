@@ -1,0 +1,74 @@
+1. Raw data
++-------+------+---+-----------------+
+|user_id|  name|age|            email|
++-------+------+---+-----------------+
+|      1|User_1| 45|user1@example.com|
+|      2|User_2| 48|user2@example.com|
+|      3|User_3| 36|user3@example.com|
+|      4|User_4| 46|user4@example.com|
+|      5|User_5| 29|user5@example.com|
++-------+------+---+-----------------+
+only showing top 5 rows
++-----------+-------+----------+----------+--------+
+|purchase_id|user_id|product_id|      date|quantity|
++-----------+-------+----------+----------+--------+
+|          1|     52|         9|2022-01-01|       1|
+|          2|     93|        37|2022-01-02|       8|
+|          3|     15|        33|2022-01-03|       1|
+|          4|     72|        42|2022-01-04|       9|
+|          5|     61|        44|2022-01-05|       6|
++-----------+-------+----------+----------+--------+
+only showing top 5 rows
++----------+------------+-----------+-----+
+|product_id|product_name|   category|price|
++----------+------------+-----------+-----+
+|         1|   Product_1|     Beauty|  8.3|
+|         2|   Product_2|       Home|  8.3|
+|         3|   Product_3|Electronics|  9.2|
+|         4|   Product_4|Electronics|  2.6|
+|         5|   Product_5|Electronics|  9.4|
++----------+------------+-----------+-----+
+only showing top 5 rows
+2. After cleaning: users=95, purchases=195, products=47
+3. Total by category
++-----------+------+
+|   category| total|
++-----------+------+
+|     Beauty| 459.9|
+|   Clothing| 790.3|
+|Electronics|1174.8|
+|       Home|1523.5|
+|     Sports|1802.5|
++-----------+------+
+
+4. Total by category, age 18-25
++-----------+-----+
+|   category|total|
++-----------+-----+
+|     Beauty| 41.4|
+|   Clothing|245.0|
+|Electronics|249.6|
+|       Home|361.1|
+|     Sports|310.5|
++-----------+-----+
+
+5. Share by category, age 18-25
++-----------+-----+----------+
+|   category|total|percentage|
++-----------+-----+----------+
+|     Beauty| 41.4|      3.43|
+|   Clothing|245.0|     20.29|
+|Electronics|249.6|     20.67|
+|       Home|361.1|      29.9|
+|     Sports|310.5|     25.71|
++-----------+-----+----------+
+
+6. Top 3 categories, age 18-25
++-----------+-----+----------+
+|   category|total|percentage|
++-----------+-----+----------+
+|       Home|361.1|      29.9|
+|     Sports|310.5|     25.71|
+|Electronics|249.6|     20.67|
++-----------+-----+----------+
+

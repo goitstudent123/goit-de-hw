@@ -1,0 +1,93 @@
+[topics] created anton_husiev_building_sensors
+[topics] created anton_husiev_temperature_alerts
+[topics] created anton_husiev_humidity_alerts
+[topics] on broker:
+anton_husiev_temperature_alerts
+anton_husiev_humidity_alerts
+anton_husiev_building_sensors
+[alerts] reading anton_husiev_temperature_alerts, anton_husiev_humidity_alerts
+[processor] reading anton_husiev_building_sensors
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:17+00:00', 'temperature': 35.9, 'humidity': 70.7}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:17+00:00', 'temperature': 43.4, 'humidity': 60.4}
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:17+00:00', 'temperature': 32.7, 'humidity': 63.1}
+[processor] got sensor 8604: temperature 43.4, humidity 60.4 -> 1 alert(s)
+[processor]   sent to anton_husiev_temperature_alerts (partition 0, offset 0): Temperature 43.4 is above 40
+[processor] got sensor 6735: temperature 35.9, humidity 70.7 -> ok
+[processor] got sensor 6322: temperature 32.7, humidity 63.1 -> ok
+[alerts] 2026-10-19T14:06:17+00:00 sensor 8604: Temperature 43.4 is above 40 (temperature 43.4, humidity 60.4)
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:18+00:00', 'temperature': 37.9, 'humidity': 56.6}
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:18+00:00', 'temperature': 27.9, 'humidity': 16.3}
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:18+00:00', 'temperature': 32.8, 'humidity': 55.1}
+[processor] got sensor 6735: temperature 27.9, humidity 16.3 -> 1 alert(s)
+[processor]   sent to anton_husiev_humidity_alerts (partition 0, offset 0): Humidity 16.3 is below 20
+[processor] got sensor 6322: temperature 32.8, humidity 55.1 -> ok
+[processor] got sensor 8604: temperature 37.9, humidity 56.6 -> ok
+[alerts] 2026-10-19T14:06:18+00:00 sensor 6735: Humidity 16.3 is below 20 (temperature 27.9, humidity 16.3)
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:19+00:00', 'temperature': 27.2, 'humidity': 22.7}
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:19+00:00', 'temperature': 25.3, 'humidity': 63.9}
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:19+00:00', 'temperature': 31.6, 'humidity': 15.1}
+[processor] got sensor 8604: temperature 27.2, humidity 22.7 -> ok
+[processor] got sensor 6735: temperature 25.3, humidity 63.9 -> ok
+[processor] got sensor 6322: temperature 31.6, humidity 15.1 -> 1 alert(s)
+[processor]   sent to anton_husiev_humidity_alerts (partition 0, offset 1): Humidity 15.1 is below 20
+[alerts] 2026-10-19T14:06:19+00:00 sensor 6322: Humidity 15.1 is below 20 (temperature 31.6, humidity 15.1)
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:20+00:00', 'temperature': 39.4, 'humidity': 78.4}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:20+00:00', 'temperature': 29.8, 'humidity': 27.7}
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:20+00:00', 'temperature': 27.0, 'humidity': 81.1}
+[processor] got sensor 8604: temperature 29.8, humidity 27.7 -> ok
+[processor] got sensor 6322: temperature 27.0, humidity 81.1 -> 1 alert(s)
+[processor]   sent to anton_husiev_humidity_alerts (partition 0, offset 2): Humidity 81.1 is above 80
+[alerts] 2026-10-19T14:06:20+00:00 sensor 6322: Humidity 81.1 is above 80 (temperature 27.0, humidity 81.1)
+[processor] got sensor 6735: temperature 39.4, humidity 78.4 -> ok
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:21+00:00', 'temperature': 34.3, 'humidity': 45.6}
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:21+00:00', 'temperature': 36.9, 'humidity': 57.0}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:21+00:00', 'temperature': 29.5, 'humidity': 32.9}
+[processor] got sensor 6322: temperature 36.9, humidity 57.0 -> ok
+[processor] got sensor 8604: temperature 29.5, humidity 32.9 -> ok
+[processor] got sensor 6735: temperature 34.3, humidity 45.6 -> ok
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:22+00:00', 'temperature': 33.8, 'humidity': 38.3}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:22+00:00', 'temperature': 37.7, 'humidity': 30.7}
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:22+00:00', 'temperature': 32.4, 'humidity': 18.5}
+[processor] got sensor 6735: temperature 33.8, humidity 38.3 -> ok
+[processor] got sensor 8604: temperature 37.7, humidity 30.7 -> ok
+[processor] got sensor 6322: temperature 32.4, humidity 18.5 -> 1 alert(s)
+[processor]   sent to anton_husiev_humidity_alerts (partition 0, offset 3): Humidity 18.5 is below 20
+[alerts] 2026-10-19T14:06:22+00:00 sensor 6322: Humidity 18.5 is below 20 (temperature 32.4, humidity 18.5)
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:23+00:00', 'temperature': 40.4, 'humidity': 21.4}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:23+00:00', 'temperature': 41.4, 'humidity': 19.3}
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:23+00:00', 'temperature': 29.5, 'humidity': 59.0}
+[processor] got sensor 6735: temperature 29.5, humidity 59.0 -> ok
+[processor] got sensor 8604: temperature 41.4, humidity 19.3 -> 2 alert(s)
+[processor]   sent to anton_husiev_temperature_alerts (partition 0, offset 1): Temperature 41.4 is above 40
+[alerts] 2026-10-19T14:06:23+00:00 sensor 8604: Temperature 41.4 is above 40 (temperature 41.4, humidity 19.3)
+[processor]   sent to anton_husiev_humidity_alerts (partition 0, offset 4): Humidity 19.3 is below 20
+[processor] got sensor 6322: temperature 40.4, humidity 21.4 -> 1 alert(s)
+[alerts] 2026-10-19T14:06:23+00:00 sensor 8604: Humidity 19.3 is below 20 (temperature 41.4, humidity 19.3)
+[processor]   sent to anton_husiev_temperature_alerts (partition 0, offset 2): Temperature 40.4 is above 40
+[alerts] 2026-10-19T14:06:23+00:00 sensor 6322: Temperature 40.4 is above 40 (temperature 40.4, humidity 21.4)
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:24+00:00', 'temperature': 40.4, 'humidity': 69.7}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:24+00:00', 'temperature': 29.8, 'humidity': 70.6}
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:24+00:00', 'temperature': 31.0, 'humidity': 78.3}
+[processor] got sensor 6322: temperature 40.4, humidity 69.7 -> 1 alert(s)
+[processor]   sent to anton_husiev_temperature_alerts (partition 0, offset 3): Temperature 40.4 is above 40
+[processor] got sensor 8604: temperature 29.8, humidity 70.6 -> ok
+[alerts] 2026-10-19T14:06:24+00:00 sensor 6322: Temperature 40.4 is above 40 (temperature 40.4, humidity 69.7)
+[processor] got sensor 6735: temperature 31.0, humidity 78.3 -> ok
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:25+00:00', 'temperature': 39.6, 'humidity': 23.7}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:25+00:00', 'temperature': 40.2, 'humidity': 28.8}
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:25+00:00', 'temperature': 39.2, 'humidity': 46.0}
+[processor] got sensor 6322: temperature 39.6, humidity 23.7 -> ok
+[processor] got sensor 6735: temperature 39.2, humidity 46.0 -> ok
+[processor] got sensor 8604: temperature 40.2, humidity 28.8 -> 1 alert(s)
+[processor]   sent to anton_husiev_temperature_alerts (partition 0, offset 4): Temperature 40.2 is above 40
+[alerts] 2026-10-19T14:06:25+00:00 sensor 8604: Temperature 40.2 is above 40 (temperature 40.2, humidity 28.8)
+[sensor 6322] sent {'sensor_id': 6322, 'timestamp': '2026-10-19T14:06:26+00:00', 'temperature': 35.3, 'humidity': 80.6}
+[sensor 8604] sent {'sensor_id': 8604, 'timestamp': '2026-10-19T14:06:26+00:00', 'temperature': 38.3, 'humidity': 56.8}
+[sensor 6735] sent {'sensor_id': 6735, 'timestamp': '2026-10-19T14:06:26+00:00', 'temperature': 43.5, 'humidity': 46.5}
+[processor] got sensor 6322: temperature 35.3, humidity 80.6 -> 1 alert(s)
+[processor]   sent to anton_husiev_humidity_alerts (partition 0, offset 5): Humidity 80.6 is above 80
+[alerts] 2026-10-19T14:06:26+00:00 sensor 6322: Humidity 80.6 is above 80 (temperature 35.3, humidity 80.6)
+[processor] got sensor 8604: temperature 38.3, humidity 56.8 -> ok
+[processor] got sensor 6735: temperature 43.5, humidity 46.5 -> 1 alert(s)
+[processor]   sent to anton_husiev_temperature_alerts (partition 0, offset 5): Temperature 43.5 is above 40
+[alerts] 2026-10-19T14:06:26+00:00 sensor 6735: Temperature 43.5 is above 40 (temperature 43.5, humidity 46.5)

@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0 -- ~/goit-de-hw/hw-05/.venv/bin/python3
+rootdir: ~/goit-de-hw/hw-05
+collecting ... collected 10 items
+
+test_alerts.py::test_reading_has_id_time_and_values_in_range PASSED      [ 10%]
+test_alerts.py::test_normal_reading_gives_no_alerts PASSED               [ 20%]
+test_alerts.py::test_temperature_above_40 PASSED                         [ 30%]
+test_alerts.py::test_humidity_out_of_range[80.1-above 80] PASSED         [ 40%]
+test_alerts.py::test_humidity_out_of_range[19.9-below 20] PASSED         [ 50%]
+test_alerts.py::test_both_alerts_for_one_reading PASSED                  [ 60%]
+test_alerts.py::test_format_alert PASSED                                 [ 70%]
+test_alerts.py::test_create_topics PASSED                                [ 80%]
+test_alerts.py::test_sensor_sends_readings_with_one_id PASSED            [ 90%]
+test_alerts.py::test_alerts_go_through_the_pipeline PASSED               [100%]
+
+============================= 10 passed in 37.76s ==============================

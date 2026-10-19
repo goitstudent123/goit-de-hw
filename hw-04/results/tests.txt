@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0 -- ~/goit-de-hw/hw-04/.venv/bin/python3
+rootdir: ~/goit-de-hw/hw-04
+collecting ... collected 4 items
+
+test_parts.py::test_job_count[part_1-5] PASSED                           [ 25%]
+test_parts.py::test_job_count[part_2-8] PASSED                           [ 50%]
+test_parts.py::test_job_count[part_3-7] PASSED                           [ 75%]
+test_parts.py::test_parts_return_same_rows PASSED                        [100%]
+
+============================== 4 passed in 5.61s ===============================

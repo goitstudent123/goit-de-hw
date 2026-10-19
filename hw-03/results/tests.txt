@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0 -- ~/goit-de-hw/hw-03/.venv/bin/python3
+rootdir: ~/goit-de-hw/hw-03
+collecting ... collected 6 items
+
+test_main.py::test_load_data_reads_csv_with_header_and_types PASSED      [ 16%]
+test_main.py::test_clean_drops_rows_with_any_missing_value PASSED        [ 33%]
+test_main.py::test_total_by_category PASSED                              [ 50%]
+test_main.py::test_total_by_category_for_age_includes_18_and_25 PASSED   [ 66%]
+test_main.py::test_share_by_category_is_percent_of_total PASSED          [ 83%]
+test_main.py::test_top_categories_returns_highest_percentages PASSED     [100%]
+
+============================== 6 passed in 6.18s ===============================

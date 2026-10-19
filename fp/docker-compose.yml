@@ -1,0 +1,59 @@
+services:
+  mysql:
+    image: mysql:8.4.11
+    command: --secure-file-priv=/data
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./data:/data
+    healthcheck:
+      # mysqld restarts once after the init script, so wait for the loaded tables
+      test: mysql -h 127.0.0.1 -uroot -proot -e "SELECT 1 FROM olympic_dataset.athlete_event_results LIMIT 1"
+      interval: 5s
+      timeout: 5s
+      retries: 60
+
+  kafka:
+    image: apache/kafka:4.1.0
+    ports:
+      - "29095:29095"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:29095,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29095
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    healthcheck:
+      test: /opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:29095 > /dev/null
+      interval: 5s
+      timeout: 10s
+      retries: 20
+
+  airflow:
+    build: .
+    command: standalone
+    ports:
+      - "8081:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      # with webserver_config.py: local UI and API without a login, the UI reads the logs through the API
+      AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.default
+    volumes:
+      - ./part_2:/opt/airflow/dags
+      - ./test_dag.py:/opt/airflow/test_dag.py:ro
+      - ./webserver_config.py:/opt/airflow/webserver_config.py:ro
+    healthcheck:
+      test: curl -sf http://localhost:8080/health
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 30s

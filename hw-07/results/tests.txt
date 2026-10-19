@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+collecting ... collected 18 items
+
+test_dag.py::test_dag_has_one_task_per_step PASSED                       [  5%]
+test_dag.py::test_task_order PASSED                                      [ 11%]
+test_dag.py::test_runs_do_not_overlap PASSED                             [ 16%]
+test_dag.py::test_create_table_sql PASSED                                [ 22%]
+test_dag.py::test_pick_medal_returns_each_medal PASSED                   [ 27%]
+test_dag.py::test_branch_runs_calc_task_for_picked_medal[Bronze] PASSED  [ 33%]
+test_dag.py::test_branch_runs_calc_task_for_picked_medal[Silver] PASSED  [ 38%]
+test_dag.py::test_branch_runs_calc_task_for_picked_medal[Gold] PASSED    [ 44%]
+test_dag.py::test_delay_runs_after_any_successful_calc_task PASSED       [ 50%]
+test_dag.py::test_delay_sleeps_given_seconds PASSED                      [ 55%]
+test_dag.py::test_default_delay_is_shorter_than_max_age PASSED           [ 61%]
+test_dag.py::test_sensor_gives_up_on_old_record PASSED                   [ 66%]
+test_dag.py::test_calc_task_saves_medal_count[Bronze] PASSED             [ 72%]
+test_dag.py::test_calc_task_saves_medal_count[Silver] PASSED             [ 77%]
+test_dag.py::test_calc_task_saves_medal_count[Gold] PASSED               [ 83%]
+test_dag.py::test_check_passes_for_fresh_record PASSED                   [ 88%]
+test_dag.py::test_check_fails_for_record_older_than_30_seconds PASSED    [ 94%]
+test_dag.py::test_check_fails_for_empty_table PASSED                     [100%]
+
+============================== 18 passed in 1.64s ==============================

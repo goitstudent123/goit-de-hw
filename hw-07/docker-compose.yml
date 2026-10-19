@@ -1,0 +1,41 @@
+services:
+  mysql:
+    image: mysql:8.4.11
+    # empty means LOAD DATA can read any path, here the read-only /data mount
+    command: --secure-file-priv=
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./data:/data:ro
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -proot --silent
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  airflow:
+    image: apache/airflow:3.3.2-python3.12
+    command: standalone
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
+      # MYSQL_* from .env point the DAG to another server, otherwise it uses the local one
+      AIRFLOW_CONN_GOIT_MYSQL_DB: >-
+        {"conn_type": "mysql", "host": "${MYSQL_HOST:-mysql}", "port": ${MYSQL_PORT:-3306},
+        "login": "${MYSQL_USER:-root}", "password": "${MYSQL_PASSWORD:-root}"}
+    volumes:
+      - ./dags:/opt/airflow/dags
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: curl -sf http://localhost:8080/api/v2/monitor/health
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 30s
